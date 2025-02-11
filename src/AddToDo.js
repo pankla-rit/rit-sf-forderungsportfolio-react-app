@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-const InputDiv = ({ addNewTodo }) => {
+const AddToDoComp = ({ addNewTodo }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => setInputValue(event.target.value);
@@ -12,6 +12,8 @@ const InputDiv = ({ addNewTodo }) => {
     setInputValue("");
   };
 
+  
+
   return (
     <form id="textinput" onSubmit={handleSubmit}>
       <input
@@ -20,9 +22,9 @@ const InputDiv = ({ addNewTodo }) => {
         value={inputValue}
         onChange={handleInputChange}
       />
-      <button type="submit">Add</button>
+      <button classname = "add-btn" type="submit">Add</button>
     </form>
   );
 };
 
-export default InputDiv;
+export default AddToDoComp;

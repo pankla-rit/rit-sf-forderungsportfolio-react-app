@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import "./App.css";
 import Titel from "./Titel.js";
-import InputDiv from "./InputDiv";
+import AddToDoComp from "./AddToDo.js";
+import RemoveToDo from "./RemoveToDo.js";
 import ToDoList from "./ToDoList"
 
 
@@ -12,12 +13,17 @@ const App = () => {
 
     const addNewTodo = (newTodo) => {
       setTodos([...todos, newTodo]);
-    }
+    };
+
+    const removeTodo = (index) => {
+      setTodos(todos.filter((_, valueindex) => valueindex !== index));
+    };
 
   return (
     <>
     <Titel />
-    <InputDiv addNewTodo={addNewTodo}/>
+    <AddToDoComp addNewTodo={addNewTodo}/> 
+    <RemoveToDo removeTodo={removeTodo}/> {/*Nur noch funktionalität machen*/}
     <ToDoList todos={todos}/>
     </>
   );

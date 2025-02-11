@@ -6,7 +6,8 @@ const ToDoList = ({todos = []}) => {
             <ul>
                 <form>
                     {todos.map((todo, index) => (
-                        <div key={index}>
+                        <div 
+                            key={index}>
                             <input type="checkbox" />
                             {todo}
                         </div>
@@ -18,3 +19,30 @@ const ToDoList = ({todos = []}) => {
 };
 
 export default ToDoList;
+
+
+
+// kaputter Versuch:
+// import React from "react";
+// import RemoveToDo from "./RemoveToDo";
+
+// const ToDoList = ({todos, removeTodo = []}) => {
+//     return (
+//         <div id="List">
+//             <ul>
+//                 <form>
+//                     {todos.map((todo, index) => (
+//                         <div 
+//                             key={index} classname="todo-item">
+//                             <input type="checkbox" onChange={() => removeTodo(index)} />
+//                             <RemoveToDo index={index} removeTodo={removeTodo} />
+//                             {todo}
+//                         </div>
+//                     ))}
+//                 </form>
+//             </ul>
+//         </div>
+//     );
+// };
+
+// export default ToDoList;
