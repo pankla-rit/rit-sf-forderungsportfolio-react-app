@@ -1,29 +1,30 @@
-import React, {useState} from "react";
-import "./App.css";
-import Titel from "./Titel.js";
-import AddToDoComp from "./AddToDo.js";
-import ToDoList from "./ToDoList"
-import RichTextEditor from "./RichTextEditor.js";
+// App.js
+import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import CustomTabs from './CustomTabs';
+import TabPanel from './TabPanel';
 
-// Funktion für die Hauptapp
 const App = () => {
-    const [todos, setTodos] = useState([]);
+  const [activeTab, setActiveTab] = useState(0);
 
-    const addNewTodo = (newTodo) => {
-      setTodos([...todos, {id: Date.now(), text: newTodo}]);
-    };
+  // Definiere deine Tabs – hier mit Label und Inhalt
+  const tabs = [
+    { label: 'Tab 1', content: 'Hier steht irgendwas für Tab 1' }
+  ];
 
-    const removeTodo = (id) => {
-      setTodos(todos.filter((todo) => todo.id !== id));
-    };
+  const handleChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
 
   return (
-    <>
-    <Titel />
-    <AddToDoComp addNewTodo={addNewTodo}/>
-    <ToDoList todos={todos} removeTodo={removeTodo}/>
-    <RichTextEditor/>
-    </>
+    <Box sx={{ width: '100%', p: 2, fontFamily: 'Arial, sans-serif' }}>
+      <CustomTabs tabs={tabs} value={activeTab} handleChange={handleChange} />
+      {tabs.map((tab, index) => (
+        <TabPanel key={index} value={activeTab} index={index}>
+          {tab.content}
+        </TabPanel>
+      ))}
+    </Box>
   );
 };
 
