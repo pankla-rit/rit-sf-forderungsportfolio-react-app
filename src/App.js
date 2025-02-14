@@ -5,7 +5,6 @@ import AddToDoComp from "./AddToDo.js";
 import ToDoList from "./ToDoList"
 import RichTextEditor from "./RichTextEditor.js";
 
-
 // Funktion für die Hauptapp
 const App = () => {
     const [todos, setTodos] = useState([]);
