@@ -2,9 +2,8 @@ import React, {useState} from "react";
 import "./App.css";
 import Titel from "./Titel.js";
 import AddToDoComp from "./AddToDo.js";
-import RemoveToDo from "./RemoveToDo.js";
 import ToDoList from "./ToDoList"
-
+import RichTextEditor from "./RichTextEditor.js";
 
 
 // Funktion für die Hauptapp
@@ -12,19 +11,19 @@ const App = () => {
     const [todos, setTodos] = useState([]);
 
     const addNewTodo = (newTodo) => {
-      setTodos([...todos, newTodo]);
+      setTodos([...todos, {id: Date.now(), text: newTodo}]);
     };
 
-    const removeTodo = (index) => {
-      setTodos(todos.filter((_, valueindex) => valueindex !== index));
+    const removeTodo = (id) => {
+      setTodos(todos.filter((todo) => todo.id !== id));
     };
 
   return (
     <>
     <Titel />
-    <AddToDoComp addNewTodo={addNewTodo}/> 
-    <RemoveToDo removeTodo={removeTodo}/> {/*Nur noch funktionalität machen*/}
-    <ToDoList todos={todos}/>
+    <AddToDoComp addNewTodo={addNewTodo}/>
+    <ToDoList todos={todos} removeTodo={removeTodo}/>
+    <RichTextEditor/>
     </>
   );
 };
