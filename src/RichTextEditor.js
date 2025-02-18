@@ -11,7 +11,7 @@ const RichTextEditor = () => {
 
   return (
     <div className="rich-text-editor">
-      <h2>Zusätzliche Notizen</h2>
+      <h2>Text-Editor</h2>
       
       <div className="toolbar" >
         <button onClick={() => formatText("bold")}><b>Bolt</b></button>

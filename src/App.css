@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(254, 255, 248);
+}
+
+#App{
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#textEditorBox{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#tabPanel{
+    margin-bottom: 0px;
+}
+
+.editor{
+    margin-top: 10px;
+    padding: 50px;
+    border: 1px solid #ccc;
+}
+
+button{
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.rich-text-editor{
+    margin: 10px;
+}
