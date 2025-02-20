@@ -1,22 +1,13 @@
-// src/TabButtons.js
 import React from "react";
+import "./App.css"
 
 const TabButtons = ({ tabs, activeTab, setActiveTab }) => {
-  const buttonStyle = (tabIndex) => ({
-    
-    padding: "10px 20px",
-    marginRight: "10px",
-    backgroundColor: activeTab === tabIndex ? "#e0f0ff" : "#fff",
-    border: "1px solid #ccc",
-    cursor: "pointer",
-  });
-
   return (
-    <div id="tabPanel">
+    <div style={{ marginBottom: "5px" }}>
       {tabs.map((tab, index) => (
         <button
           key={index}
-          style={buttonStyle(index)}
+          className={`tab-button ${activeTab === index ? "active" : ""}`}
           onClick={() => setActiveTab(index)}
         >
           {tab.label}
